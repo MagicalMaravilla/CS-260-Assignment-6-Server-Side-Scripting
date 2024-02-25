@@ -1,0 +1,116 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #fff5e6; /* Light cheese-like background */
+    color: #333; /* Keeping text readable */
+    padding: 20px;
+}
+
+header {
+    background-color: #a33; /* Deep marinara red */
+    color: #fff;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fffefe; /* Slightly off-white, like mozzarella */
+}
+
+.pizza-item {
+    background-color: #ffefc1; /* Cheesy yellow */
+    color: #704214; /* Crust brown */
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 8px; /* Rounded edges for a softer look */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow for depth */
+}
+
+#join {
+    margin-top: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+}
+
+form input, form button {
+    margin: 5px 0;
+    padding: 10px;
+}
+
+form button {
+    cursor: pointer;
+    background-color: #5a1a1a; /* Darker shade of marinara */
+    color: #ffefc1; /* Cheesy yellow text */
+    border: none;
+    border-radius: 4px; /* Slightly rounded edges for buttons */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+form button:hover {
+    background-color: #7a1a1a; /* Lighter when hovered */
+}
+
+/* Chamber of the 5 Cheeses styles */
+.chamber-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.chamber-image {
+    width: 180px; /* Adjust based on your preference */
+    margin: 10px;
+    border-radius: 10px; /* Rounded corners for images */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Adding some depth to images */
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .chamber-images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .chamber-image {
+        width: 80%; /* Larger images on smaller screens */
+        max-width: 350px; /* Ensuring images don't get too large */
+    }
+}
+
+.rating-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.pizza-rating {
+    cursor: pointer;
+    font-size: 24px; /* Adjust size as needed */
+}
