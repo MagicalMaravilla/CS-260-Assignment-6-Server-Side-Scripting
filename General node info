@@ -1,0 +1,13 @@
+console.log(); // global object (any file or location)
+setTimeout() // set a delay if needed (standard)
+clearTimeout(); //
+
+setInterval(() => {
+    
+}, interval);
+clearInterval()
+
+var message = ""; // this is NOT a global object, if ran and paired via console log we will get undefined, this needs to be called via app.js NOT global
+window.console.log // all of these are global simialr to window
+global.console.log // another way to call the functions above variable
+
