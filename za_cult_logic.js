@@ -1,14 +1,29 @@
-// Handle form submission
-document.getElementById('joinForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevents the form from submitting in the traditional way
+document.addEventListener('DOMContentLoaded', function() {
+    var joinForm = document.getElementById('joinForm');
 
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
+    joinForm.addEventListener('submit', function(event) {
+        event.preventDefault();
 
-    // For demonstration, we'll just log the values and show a simple message
-    console.log(`Name: ${name}, Email: ${email}`);
-    alert(`Thanks for joining the Pizza Cult, ${name}! Check your email (${email}) for a welcome message.`);
+        var name = joinForm.querySelector('input[name="name"]').value;
+        var email = joinForm.querySelector('input[name="email"]').value;
 
-    // Here you might want to send the data to a server or process it further
-    // This is a placeholder for such functionality
+        fetch('/join', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: `name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}`
+        });
+
+        joinForm.reset();
+    });
+
+    // Example function to retrieve and display the JSON data
+    function getUserData() {
+        fetch('/get-user-data')
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error('Error:', error));
+    }
+
+    // Call getUserData() as needed, e.g., to check user submissions
 });
+
