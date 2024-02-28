@@ -30,6 +30,18 @@ app.post('/join', (req, res) => {
     });
 });
 
+// Handle POST requests to "/feedback"
+app.post('/feedback', (req, res) => {
+    const feedback = req.body; // Assuming feedback contains name and message
+    console.log('Feedback received:', feedback);
+
+    // Optional: Save feedback to a file or process as needed
+    // For simplicity, we're just logging it here
+
+    // Redirect to the thank_you.html page after receiving feedback
+    res.redirect('/za_thanks.html'); // Make sure its za_thanks.html file
+});
+
 // Serve "za_cult.html" for the root route
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/za_cult.html');
