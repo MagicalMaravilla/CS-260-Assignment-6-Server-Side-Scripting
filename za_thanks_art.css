@@ -1,0 +1,44 @@
+body {
+    background-color: #330033; /* Deep purple */
+    color: #d4af37; /* Gold for text */
+    font-family: 'Garamond', serif;
+    background-image: url('https://images.unsplash.com/photo-1615800098746-73af8261e3df?q=80&w=3075&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+}
+
+.thank-you-container {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Translucent overlay */
+    margin: 30px auto;
+    max-width: 600px;
+    border-radius: 15px;
+}
+
+.mystic-button {
+    background-color: #4b0082; /* Indigo */
+    color: #fff;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.mystic-button:hover {
+    background-color: #800080; /* Purple */
+    transform: scale(1.1);
+}
+
+.destiny-message {
+    margin-top: 20px;
+    color: #ffa07a; /* Light Salmon */
+}
+
+a {
+    color: #d4af37; /* Gold */
+    text-decoration: none;
+    font-weight: bold;
+}
