@@ -41,40 +41,48 @@ nav a {
 }
 
 .pizza-item {
-    background-color: #ffefc1;
-    color: #704214;
+    background-color: #ffefc1; /* Light, cheesy background */
+    color: #704214; /* Crust-like text color */
     padding: 20px;
     margin-bottom: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease; /* Added for hover effect */
-    display: flex; /* Use flexbox to align children */
-    flex-direction: column; /* Stack children vertically */
-    align-items: center; /* Center-align the flex children horizontally */
-    width: 80%; /* Adjust width as needed */
-    margin: 10px auto; /* Center the item itself */
-}
-
-.pizza-image {
-    max-width: 100%; /* Ensure the image is responsive and fits its container */
-    height: auto; /* Maintain aspect ratio */
-}
-
-#menu {
+    border-radius: 8px; /* Soft rounded corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow-y: auto;
-    max-height: 725px; /* Adjust this value based on your design needs */
-  }
-  
-  .pizza-item {
-    width: 80%; /* Centering the items */
-    margin: 10px auto; /* Adding top and bottom margin, auto for left and right */
-  }
-  
+    width: 80%;
+    margin: 10px auto;
+    border: 2px solid gold; /* New border to add a revered look */
+    position: relative; /* Positioning for potential pseudo-elements */
+}
+
+.pizza-image {
+    max-width: 100%;
+    height: auto; /* Ensure the image is responsive */
+    /* Consider adding a subtle box-shadow or border here if desired */
+}
+
+/* New CSS for a glowing effect around pizza items */
 .pizza-item:hover {
-    transform: translateY(-5px); /* Subtle hover effect */
+    box-shadow: 0 0 15px gold; /* Glowing effect on hover */
+}
+
+/* Optional: CSS for a pseudo-element to create a halo or aura effect */
+.pizza-item:before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    bottom: -10px;
+    left: -10px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px 10px gold; /* Soft glowing halo */
+    z-index: -1; /* Ensure it's behind the pizza item content */
+    display: none; /* Initially hidden, display on hover if desired */
+}
+
+.pizza-item:hover:before {
+    display: block; /* Show the halo on hover, remove if constant display is preferred */
 }
 
 #join {
@@ -138,19 +146,17 @@ form button:hover {
   }
   
 
-/* Responsive Design Adjustments */
-@media (max-width: 768px) {
-    .chamber-images {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .chamber-image {
-        width: 80%;
-        max-width: 350px;
-    }
-}
-
-.rating-container {
-    display: none; /* Assuming we're removing ratings for simplification */
+/* Add the smoke-effect styles here */
+.smoke-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://images.unsplash.com/photo-1616684553549-d8c5873a1876?q=80&w=3772&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
+    background-size: cover;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 9; /* Below the expanded image */
+    transition: opacity 1s, visibility 1s;
 }
